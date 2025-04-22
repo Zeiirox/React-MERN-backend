@@ -100,7 +100,7 @@ const EliminarEventos = async (req, res = response) => {
       });
     }
 
-    await Evento.deleteOne();
+    await Evento.findByIdAndDelete(eventoId);
 
     res.status(201).json({
       ok: true,
